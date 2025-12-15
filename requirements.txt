@@ -1,53 +1,24 @@
-affine @ file:///home/conda/feedstock_root/build_artifacts/affine_1674245120525/work
-alembic==1.13.3
-annotated-types==0.7.0
-anyio @ file:///home/conda/feedstock_root/build_artifacts/anyio_1728935693959/work
-archspec @ file:///home/conda/feedstock_root/build_artifacts/archspec_1708969572489/work
-argon2-cffi @ file:///home/conda/feedstock_root/build_artifacts/argon2-cffi_1692818318753/work
-argon2-cffi-bindings @ file:///home/conda/feedstock_root/build_artifacts/argon2-cffi-bindings_1725356585055/work
-arrow @ file:///home/conda/feedstock_root/build_artifacts/arrow_1696128962909/work
-asttokens @ file:///home/conda/feedstock_root/build_artifacts/asttokens_1698341106958/work
-async-lru @ file:///home/conda/feedstock_root/build_artifacts/async-lru_1690563019058/work
-attrs @ file:///home/conda/feedstock_root/build_artifacts/attrs_1722977137225/work
-Babel @ file:///home/conda/feedstock_root/build_artifacts/babel_1702422572539/work
-beautifulsoup4 @ file:///home/conda/feedstock_root/build_artifacts/beautifulsoup4_1705564648255/work
-black @ file:///home/conda/feedstock_root/build_artifacts/black-recipe_1728503730172/work
-bleach @ file:///home/conda/feedstock_root/build_artifacts/bleach_1696630167146/work
-boltons @ file:///home/conda/feedstock_root/build_artifacts/boltons_1711936407380/work
-boto3 @ file:///home/conda/feedstock_root/build_artifacts/boto3_1729841854065/work
-botocore @ file:///home/conda/feedstock_root/build_artifacts/botocore_1729903365105/work
-branca @ file:///home/conda/feedstock_root/build_artifacts/branca_1714071803448/work
-Brotli @ file:///home/conda/feedstock_root/build_artifacts/brotli-split_1725267488082/work
-cached-property @ file:///home/conda/feedstock_root/build_artifacts/cached_property_1615209429212/work
-cads-api-client==1.5.3
-cdsapi==0.7.4
-certifi @ file:///home/conda/feedstock_root/build_artifacts/certifi_1725278078093/work/certifi
-certipy==0.2.1
-cffi @ file:///home/conda/feedstock_root/build_artifacts/cffi_1725560558132/work
-cftime @ file:///home/conda/feedstock_root/build_artifacts/cftime_1725400475196/work
-charset-normalizer @ file:///home/conda/feedstock_root/build_artifacts/charset-normalizer_1698833585322/work
-click @ file:///home/conda/feedstock_root/build_artifacts/click_1692311806742/work
-click-plugins==1.1.1
-cligj @ file:///home/conda/feedstock_root/build_artifacts/cligj_1633637764473/work
-colorama @ file:///home/conda/feedstock_root/build_artifacts/colorama_1666700638685/work
-comm @ file:///home/conda/feedstock_root/build_artifacts/comm_1710320294760/work
-conda @ file:///home/conda/feedstock_root/build_artifacts/conda_1729155160285/work
-conda-libmamba-solver @ file:///home/conda/feedstock_root/build_artifacts/conda-libmamba-solver_1721292473987/work/src
-conda-package-handling @ file:///home/conda/feedstock_root/build_artifacts/conda-package-handling_1717678605937/work
-conda_package_streaming @ file:///home/conda/feedstock_root/build_artifacts/conda-package-streaming_1717678526951/work
-contourpy @ file:///home/conda/feedstock_root/build_artifacts/contourpy_1727293529029/work
-cryptography==43.0.3
-cycler @ file:///home/conda/feedstock_root/build_artifacts/cycler_1696677705766/work
-debugpy @ file:///home/conda/feedstock_root/build_artifacts/debugpy_1728594098955/work
-decorator @ file:///home/conda/feedstock_root/build_artifacts/decorator_1641555617451/work
-defusedxml @ file:///home/conda/feedstock_root/build_artifacts/defusedxml_1615232257335/work
-distro @ file:///home/conda/feedstock_root/build_artifacts/distro_1704321475663/work
-entrypoints @ file:///home/conda/feedstock_root/build_artifacts/entrypoints_1643888246732/work
-et_xmlfile @ file:///home/conda/feedstock_root/build_artifacts/et_xmlfile_1729892939528/work
-exceptiongroup @ file:///home/conda/feedstock_root/build_artifacts/exceptiongroup_1720869315914/work
-executing @ file:///home/conda/feedstock_root/build_artifacts/executing_1725214404607/work
-fastjsonschema @ file:///home/conda/feedstock_root/build_artifacts/python-fastjsonschema_1718477020893/work/dist
-fiona @ file:///home/conda/feedstock_root/build_artifacts/fiona_1726664255615/work
+# Core data processing
+xarray>=2023.1.0
+netCDF4>=1.6.0
+numpy>=1.20.0
+pandas>=1.5.0
+
+# Climate data APIs
+cdsapi>=0.7.0
+cads-api-client>=1.5.0
+
+# Visualization
+matplotlib>=3.5.0
+cartopy>=0.21.0
+
+# Jupyter notebooks
+jupyter>=1.0.0
+notebook>=6.0.0
+
+# Optional: geographic data
+geopandas>=0.13.0
+rasterio>=1.3.0
 flake8 @ file:///home/conda/feedstock_root/build_artifacts/flake8_1722878870427/work
 folium @ file:///home/conda/feedstock_root/build_artifacts/folium_1729664526496/work
 fonttools @ file:///home/conda/feedstock_root/build_artifacts/fonttools_1729530372367/work

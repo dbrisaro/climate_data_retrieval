@@ -1,60 +1,79 @@
-# climate_data_retrieval
+# Climate Data Retrieval
 
-## installation
-```
+Tools for downloading, processing, and visualizing climate reanalysis data from Copernicus Climate Data Store (CDS).
+
+## Installation
+
+```bash
 pip install -r requirements.txt
 ```
 
-## usage
+## Features
 
-### downloading data
-To retrieve ERA5 data (eg 2m temperature) and save it to a specified path, use the following parameters and code example:
+- **Data Download**: Automated ERA5 and ERA5-Land data retrieval from CDS
+- **Metadata Exploration**: Dataset discovery and variable information
+- **Visualization**: Geographic maps with coastlines, borders, and projections
+- **Multiple Datasets**: Support for regular ERA5, ERA5-Land, and daily statistics
+
+## Quick Start
+
+### 1. Download Data
 ```python
-# Define dataset and parameters
+from piscis import download_data
+
 dataset = "reanalysis-era5-single-levels"
 params = {
     "product_type": "reanalysis",
     "format": "netcdf",
     "variable": ["2m_temperature"],
     "year": "2020",
-    "month": "01",
+    "month": "01", 
     "day": "01",
     "time": "12:00",
 }
 
-# Specify output path
-output_path = 'data/raw/era5_2m_temperature.nc'
-
-# Run the download
-from piscis import download_data
-download_data(dataset, params, output_path)
-
+download_data(dataset, params, 'data/raw/era5_temperature.nc')
 ```
 
-### showing metadata
-After downloading the data, you can load and display its metadata to verify its structure and attributes.
-
+### 2. Explore Metadata
 ```python
-# Define dataset and parameters
-# Load and show metadata for ERA5 data
-from piscis import nc_loader, show_metadata
+from piscis import show_metadata, search_datasets
 
-file_path = './data/raw/era5_2m_temperature.nc'
+# Show file metadata
+show_metadata('./data/raw/era5_temperature.nc')
 
-data = nc_loader(file_path)
-show_metadata(file_path)
+# Search available CDS datasets
+search_datasets("temperature")
 ```
 
-### plotting data
-You can plot a 2D snapshot of the data (e.g., 2m_temperature) at a specific time index using plot_variable.
-
+### 3. Visualize Data
 ```python
-# Plot ERA5 data: 2m temperature at time index 0
-from piscis import plot_variable
+from piscis import plot_variable, plot_time_series
 
-file_path = './data/raw/era5_2m_temperature.nc'
-variable_name = 't2m'
+file_path = './data/raw/era5_temperature.nc'
 
-plot_variable(file_path, variable_name, time_index=0)
+# Spatial plot with geographic context
+plot_variable(file_path, 't2m', time_index=0)
+
+# Time series at location
+plot_time_series(file_path, 't2m', lat=40.0, lon=-74.0)
 ```
+
+## Available Functions
+
+**Download**: `download_data`
+**Metadata**: `show_metadata`, `search_datasets`, `get_detailed_dataset_info`
+**Visualization**: `plot_variable`, `plot_multiple_variables`, `plot_time_series`, `plot_climatology`, `plot_statistics_summary`
+**Utilities**: `nc_loader`, `get_variable_names`
+
+## Examples
+
+See notebook examples in:
+- `usage_downloader.ipynb` - Data downloading examples
+- `usage_metadata.ipynb` - Dataset exploration
+- `usage_visualizer.ipynb` - Visualization examples
+
+## Requirements
+
+Requires CDS API credentials configured. See: https://cds.climate.copernicus.eu/api-how-to
 
