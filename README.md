@@ -62,8 +62,11 @@ plot_time_series(file_path, 't2m', lat=40.0, lon=-74.0)
 ## Available Functions
 
 **Download**: `download_data`
+
 **Metadata**: `show_metadata`, `search_datasets`, `get_detailed_dataset_info`
+
 **Visualization**: `plot_variable`, `plot_multiple_variables`, `plot_time_series`, `plot_climatology`, `plot_statistics_summary`
+
 **Utilities**: `nc_loader`, `get_variable_names`
 
 ## Examples
