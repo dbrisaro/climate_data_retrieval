@@ -1,0 +1,47 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Suyana — Data Request Template
+# Fill in the fields below and run:
+#
+#   from piscis import DataRequestService
+#   result = DataRequestService().run_from_yaml("configs/request_template.yml")
+#
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Unique identifier for this lead / request
+lead_id: "lead_001"
+
+# Peril type — one of:
+#   drought | heatwave | cold_spell | precipitation
+peril: "drought"
+
+# Area of Interest
+# Option A — bounding box (WGS84 degrees)
+aoi:
+  maxy: 6.3      # North
+  miny: 1.6      # South
+  minx: -75.0    # West
+  maxx: -69.9    # East
+
+# Option B — path to a shapefile (comment out the bounding box above)
+# aoi: "data/shapefiles/region.shp"
+
+# Dataset selection (optional — only needed when a peril has multiple sources)
+# For precipitation: "chirps" (recommended) or "era5_land"
+# For all other perils: only one source exists, leave this blank
+# source_filter: "chirps"
+
+# Historical period (optional — auto-computed if omitted)
+# Auto logic: most recent 30-year window starting at a multiple of 5
+#   e.g. 1995–2025, 1990–2020
+# Uncomment to override:
+# period:
+#   start_year: 1995
+#   end_year:   2025
+
+# Local output directory  (files land in <output_dir>/<lead_id>/<peril>/)
+output_dir: "data/requests"
+
+# S3 settings (leave blank to skip upload)
+s3_bucket:  ""           # e.g. "suyana-climate-data"
+s3_prefix:  ""           # e.g. "leads/lead_001/drought"  (auto-set if blank)
+s3_region:  "us-east-1"

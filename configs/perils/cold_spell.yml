@@ -1,0 +1,17 @@
+# Peril: Cold Spell
+# Extreme cold events, frost risk, and negative temperature anomalies
+
+peril: cold_spell
+description: "Extreme cold events, frost risk, and negative temperature anomalies"
+
+sources:
+  - source_type: era5
+    dataset: reanalysis-era5-single-levels
+    description: "Daily min temperature and 2 m temperature from ERA5 (0.25° resolution)"
+    variables:
+      - 2m_temperature
+      - minimum_2m_temperature_since_previous_post_processing
+    hours:
+      - "06"
+      - "18"
+    levels: null

@@ -1,0 +1,18 @@
+# Peril: Drought
+# Soil moisture deficit and precipitation deficiency
+
+peril: drought
+description: "Soil moisture deficit and precipitation deficiency"
+
+sources:
+  - source_type: era5_land
+    dataset: reanalysis-era5-land
+    description: "Soil moisture and temperature from ERA5-Land (0.1° resolution)"
+    variables:
+      - volumetric_soil_water_layer_1   # 0–7 cm depth
+      - volumetric_soil_water_layer_2   # 7–28 cm depth
+      - total_precipitation
+      - 2m_temperature
+    hours:
+      - "00"
+    levels: null

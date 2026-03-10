@@ -1,0 +1,36 @@
+# Peril: Precipitation
+# Rainfall events, flood risk, and precipitation extremes
+#
+# Two datasets are available — choose one via source_filter in DataRequest:
+#
+#   DataRequest(peril="precipitation", source_filter="chirps")      ← recommended
+#   DataRequest(peril="precipitation", source_filter="era5_land")   ← use when you need
+#                                                                      consistency with
+#                                                                      other ERA5 variables
+#
+# If source_filter is omitted, both are downloaded.
+
+peril: precipitation
+description: "Rainfall events, flood risk, and precipitation extremes"
+
+sources:
+
+  - source_type: chirps
+    description: >
+      Daily precipitation from CHIRPS v3.0 (~5 km resolution).
+      Best choice for high-resolution rainfall analysis.
+      Downloaded directly from CHC/UCSB — does not use the CDS API.
+    variables:
+      - precip
+
+  - source_type: era5_land
+    dataset: reanalysis-era5-land
+    description: >
+      Total precipitation from ERA5-Land (0.1° resolution).
+      Use when consistency with other ERA5-Land variables is needed
+      (e.g. combined drought + precipitation analysis).
+    variables:
+      - total_precipitation
+    hours:
+      - "00"
+    levels: null
