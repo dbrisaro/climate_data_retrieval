@@ -1,3 +1,43 @@
-.ipynb_checkpoints
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.egg-info/
+dist/
+build/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Data files (can be large — download locally, don't commit)
 data/raw/
 data/processed/
+outputs/
+*.nc
+*.tif
+*.tiff
+*.geotiff
+
+# Secrets — NEVER commit these
+.env
+.env.local
+*.key
+credentials.json
+~/.cdsapirc
+
+# AWS
+.aws/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Claude
+.claude/
